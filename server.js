@@ -14,9 +14,10 @@ const path = require('path');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+/*
 var userRouter = require('./Routes/userRoutes');
 var messageRouter = require('./Routes/messageRoutes');
+*/
 dotenv.config({path: '.env'});
 const mongoose = require('mongoose');
 

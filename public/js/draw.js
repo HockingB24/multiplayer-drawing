@@ -60,7 +60,6 @@ window.onload = function () {
         ctx.moveTo(drawCoords.prevX, drawCoords.prevY);
         ctx.lineTo(drawCoords.currX, drawCoords.currY);
         ctx.stroke();
-        console.log('line drawn');
     })
 
 
