@@ -56,24 +56,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.use('/users', userRouter);
-app.use('/messages', messageRouter);
-
-
-
-
-
 io.on('connection', (socket) => {
   console.log('User connected.');
   socket.on('line draw', (drawCoords) =>
   {
     io.emit('line draw', drawCoords);
   })
+
   socket.on('disconnect', () => {
     console.log('User disconnected.');
   });
 });
-
+/*
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) =>
   {
@@ -93,7 +87,7 @@ io.on('connection', (socket) => {
     io.emit('clear messages', msg);
   })
 })
-
+*/
 
 server.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', '✓', app.get('port'), app.get('env'));
