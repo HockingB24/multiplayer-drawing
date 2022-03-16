@@ -1,8 +1,59 @@
-#drawCanvasDiv{
-    display: flex;
-    justify-content: center;
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(0,0,0,0.08);
+}
+
+
+
+#heading {
+    text-align: center;
+}
+#drawCanvasDiv {
+    margin: auto;
+    position: relative;
+    width: 400px;
 }
 #myCanvas {
+    background-color: white;
+}
+#colorBtn {
+    background-color: rgba(0,0,0,0.08);
+    height:50px;
+    width:410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    margin: 0px 10px;
+}
+#black{background-color: black;}
+#red {background-color: red;}
+#orange {background-color: orange;}
+#yellow {background-color: yellow;}
+#green {background-color: green;}
+#blue {background-color: blue;}
+#violet {background-color: purple;}
+#myCanvas {
     border:5px solid black;
-    
+}
+
+#colorText, #colorSubText, #usersConnected, #clearCanvas{
+    text-align: center;
+    margin: 10px;
+}
+
+#clearCanvas {
+    background-color: rgb(250, 94, 94);
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    cursor: pointer;
 }

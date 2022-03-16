@@ -10,6 +10,7 @@ var logger = require('morgan');
 const path = require('path');
 //const chalk = require('chalk');
 
+var usersConnected = 0;
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -59,13 +60,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 io.on('connection', (socket) => {
   console.log('User connected.');
+  usersConnected += 1;
+  io.emit('user connect', usersConnected);
+
   socket.on('line draw', (drawCoords) =>
   {
     io.emit('line draw', drawCoords);
+  });
+
+  socket.on('change color', (colorInfo) =>
+  {
+    //console.log(strokeStyle);
+    io.emit('change color', colorInfo);
   })
 
+  socket.on('clear canvas', () => io.emit('clear canvas'));
+  
   socket.on('disconnect', () => {
     console.log('User disconnected.');
+    usersConnected -= 1;
+    io.emit('user disconnect', usersConnected);
   });
 });
 /*

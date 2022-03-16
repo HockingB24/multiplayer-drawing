@@ -6,8 +6,24 @@
     <link rel="icon" type="image/x-icon" href="https://www.svgrepo.com/show/120457/paintbrush.svg">
   </head>
   <body>
+    <h1 id="heading">Multiplayer Drawing App</h1>
     <div id="drawCanvasDiv">
       <canvas id="myCanvas" width="400" height="400"></canvas>
+      <div id="colorBtn">
+        <div id="black" class="btn"></div>
+        <div id="red" class="btn"></div>
+        <div id="orange" class="btn"></div>
+        <div id="yellow" class="btn"></div>
+        <div id="green" class="btn"></div>
+        <div id="blue" class="btn"></div>
+        <div id="violet" class="btn"></div>
+      </div>
+      <div>
+        <h2 id="colorText">Group Color Selector</h2>
+        <h3 id="colorSubText">(Selects for all players)</h4>
+        <h4 id="usersConnected">Users Connected: </h4>
+        <h5 id="clearCanvas">Clear Canvas</h5>
+      </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script defer src="/draw.js"></script>
